@@ -1,0 +1,21 @@
+Star []stars=new Star[800];
+float speed;
+void setup (){
+  size(800,800);
+  for(int i=0;i<stars.length;i++){
+    stars[i]= new Star();
+  }
+}
+void draw(){
+  speed=map(mouseY,0,height,1,15);
+  background(0);
+  translate(mouseX,mouseY);
+ rotate(PI/4);
+
+  translate(30, 20, -50);
+  // rect(0, 0, 55, 55);
+  for(int i=0;i<stars.length;i++){
+    stars[i].update();
+     stars[i].show();
+  }
+}
